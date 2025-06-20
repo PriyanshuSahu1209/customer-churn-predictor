@@ -25,7 +25,7 @@ data = pd.concat([data.drop("Geography", axis=1), geo_df], axis=1)
 # Save encoders
 with open("models/label_encoder_gender.pkl", "wb") as f:
     pickle.dump(label_encoder_gender, f)
-with open("onehot_encoder_geo.pkl", "wb") as f:
+with open("models/onehot_encoder_geo.pkl", "wb") as f:
     pickle.dump(onehot_encoder_geo, f)
 
 # Feature and target
@@ -41,7 +41,7 @@ X_train = scaler.fit_transform(X_train.values)
 X_test = scaler.transform(X_test.values)
 
 # Save scaler
-with open("scaler.pkl", "wb") as f:
+with open("models/scaler.pkl", "wb") as f:
     pickle.dump(scaler, f)
 
 # Build ANN model
@@ -64,4 +64,4 @@ callbacks = [
 model.fit(X_train, y_train, validation_data=(X_test, y_test), epochs=100, callbacks=callbacks)
 
 # Save model
-model.save("model.h5")
+model.save("models/model.h5")
