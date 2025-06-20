@@ -98,4 +98,4 @@ MIT License
 
 ## 👤 Author
 
-Made with ❤️ by [Your Name]
+Made with ❤️ by Priyanshu Sahu
